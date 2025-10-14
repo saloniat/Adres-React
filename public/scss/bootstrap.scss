@@ -1,0 +1,72 @@
+/******* Customized Bootstrap ********/
+
+$primary: #797CFF;
+$secondary: #999999;
+$light: #F2F8FE;
+$dark: #111111;
+
+$font-family-base: 'Open Sans', sans-serif;
+
+$headings-font-family: 'Roboto', sans-serif;
+
+$body-color: $secondary;
+
+$headings-color: $dark;
+
+$headings-font-weight: 700;
+
+$display-font-weight: 700;
+
+$enable-responsive-font-sizes: true;
+
+$border-radius: 3px;
+
+$border-radius-sm: $border-radius;
+
+$border-radius-lg: $border-radius;
+
+$link-decoration: none;
+
+$enable-negative-margins: true;
+
+@import "bootstrap/scss/bootstrap";
+
+
+
+
+@import "custom-scss/resetcss";
+
+//Import custom varialbles
+@import "custom-scss/custom-variable";
+
+// Import custom-mixing scss
+@import "custom-scss/custom-mixing";
+
+// Import common scss
+@import "custom-scss/common"; 
+
+// Import Header Footer scss
+@import "custom-scss/header"; 
+@import "custom-scss/footer";
+
+// Import Select2 scss
+
+@import "plugin-scss/select2.scss";
+@import "plugin-scss/scrollCSS.scss";
+@import "plugin-scss/hamburger.scss";
+@import "plugin-scss/tooltip.scss";
+
+//Import "Inner-page scss"
+@import "custom-scss/home-page";
+@import "custom-scss/about-page";
+@import "custom-scss/inner-page";
+@import "custom-scss/checkbox";
+@import "custom-scss/login";
+@import "custom-scss/project-page";
+@import "custom-scss/detail-page";
+@import "custom-scss/profile-page";
+@import "custom-scss/profile-page-new"; 
+@import "custom-scss/chat-page"; 
+
+//Import "Popup scss"
+@import "custom-scss/popup-page";

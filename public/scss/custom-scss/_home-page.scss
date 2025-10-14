@@ -1,0 +1,2560 @@
+.welcome-wrap {
+    clear: both;
+
+    .welcome-box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $sky;
+        padding: 2rem;
+        @include border-radius (1.5rem);
+
+        @include breakpoint(xs) {
+            padding: 1rem;
+            @include border-radius (1rem);
+        }
+
+        h3 {
+            margin-bottom: 0;
+            line-height: 48px;
+            font-weight: $semibold;
+
+            @include breakpoint(xs) {
+                line-height: 30px;
+            }
+
+            em {
+                font-weight: $normal;
+            }
+
+            span {
+                display: block;
+                font-weight: $normal;
+                font-size: $fontMedium;
+                line-height: 22px;
+                color: #5B767F;
+
+                @include breakpoint(xs) {
+                    font-size: $fontMiddle;
+                }
+            }
+        }
+    }
+}
+
+.main-heading {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+
+    h3 {
+        margin-bottom: 0;
+        line-height: 48px;
+        font-weight: $semibold;
+
+        @include breakpoint(xs) {
+            line-height: 32px;
+        }
+
+        span {
+            padding-left: 15px;
+            position: relative;
+
+            &:before {
+                content: "";
+                width: 5px;
+                height: 28px;
+                position: absolute;
+                left: 0;
+                top: 9px;
+                background-color: $primary;
+
+                @include breakpoint(xs) {
+                    top: 5px;
+                    height: 24px;
+                }
+            }
+
+            &.favTitle {
+                border-left: none;
+                padding-left: 0;
+
+                &:before {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    .see-link {
+        font-weight: $semibold;
+        font-size: $fontExtraLarge;
+
+        img {
+            padding-left: 5px;
+        }
+    }
+}
+
+.bids-wrap {
+    clear: both;
+
+    .bids-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -20px;
+
+        @include breakpoint(xs) {
+            margin: 0;
+        }
+
+        li {
+            padding: 0 20px;
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+
+            &.full {
+                width: 100%;
+                display: inline-block;
+
+                h6 {
+                    margin-bottom: 0;
+                }
+            }
+
+            @include breakpoint(sm) {
+                width: 100%;
+                padding: 0 0 20px;
+            }
+
+            &.bidfull {
+                width: 100%;
+                justify-content: space-between;
+
+                .shimmer {
+                    padding: 0;
+                    width: 48%;
+                    margin: 0;
+                }
+            }
+
+            figure {
+                width: 280px;
+                position: relative;
+                margin-bottom: 0;
+
+                @include breakpoint(xs) {
+                    width: 100%;
+                }
+
+                .slide-fixed {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+
+                .slide-img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    -o-object-fit: cover;
+                    transition: transform 0.2s, opacity 0.3s, -webkit-transform 0.4s;
+                    @include border-radius (1.5rem);
+
+                    @include breakpoint(xs) {
+                        @include border-radius (1rem);
+                    }
+                }
+
+                .msg-status {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+
+                    .msg {
+                        font-weight: $semibold;
+                        font-size: $fontSmall;
+                        text-align: center;
+                        padding: 4px 0;
+                        backdrop-filter: blur(4px);
+                        @include border-radius (0 0 20px 20px);
+
+                        @include breakpoint(xs) {
+                            @include border-radius (0 0 14px 14px);
+                        }
+
+                        &.success-msg {
+                            background-color: rgba($color: #DBFAE3, $alpha: 0.8);
+                            backdrop-filter: blur(4px);
+                            color: #34A853;
+                        }
+
+                        &.danger-msg {
+                            background-color: rgba($color: #FFE3E3, $alpha: 0.8);
+                            color: #E32926;
+                        }
+                    }
+                }
+            }
+
+            figcaption {
+                width: calc(100% - 280px);
+                padding-left: 15px;
+                position: relative;
+
+                @include breakpoint(xs) {
+                    width: 100%;
+                    padding-left: 0;
+                    padding-top: 1rem;
+                }
+
+                .top {
+                    width: 100%;
+                    padding: 0 0 1rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: $white;
+                    position: relative;
+
+                    .status-info {
+                        span {
+                            display: inline-block;
+                            font-weight: $medium;
+                            font-size: $fontMedium;
+                            padding: 1px 12px;
+                            line-height: 30px;
+                            @include border-radius (20px);
+
+                            @include breakpoint(xs) {
+                                font-size: $fontMiddle;
+                            }
+
+                            &.total-bid {
+                                color: $black;
+                                background-color: $sky;
+                            }
+
+                            &.status {
+                                color: $white;
+                                background-color: #34A853;
+                            }
+
+                            &.active {
+                                color: $white;
+                                background-color: #34A853;
+                            }
+
+                            &.danger {
+                                color: $white;
+                                background-color: $red;
+                            }
+
+                            &.default {
+                                color: $white;
+                                background-color: #676767;
+                            }
+
+                            &.info {
+                                color: $white;
+                                background-color: $blue;
+                            }
+                        }
+
+                        span+span {
+                            margin-left: 10px;
+                        }
+                    }
+
+                    .like-btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 32px;
+                        height: 32px;
+                        background-color: $sky;
+                        @include border-radius (30px);
+                    }
+
+                    .action-icon {
+                        height: 20px;
+                        width: 20px;
+
+                        .view-list {
+                            text-align: right;
+                            vertical-align: top;
+                            color: $black;
+                            line-height: normal;
+                            cursor: pointer;
+                            width: 100%;
+                            display: inline-block;
+
+                            i {
+                                font-size: 2em;
+                                line-height: 14px;
+                            }
+
+                            &:hover {
+                                ul {
+                                    display: block;
+                                }
+                            }
+                        }
+
+                        ul {
+                            width: 170px;
+                            position: absolute;
+                            right: 0;
+                            display: none;
+                            top: 16px;
+                            background: $white;
+                            box-shadow: 1px 0 3px 2px rgba(0, 0, 0, 0.15);
+                            z-index: 1;
+                            @include border-radius (8px);
+
+                            li {
+                                list-style: none;
+                                text-align: left;
+                                width: 100%;
+                                min-height: auto;
+                                border: none;
+                                padding: 0;
+                                position: relative;
+                                display: inline-block;
+
+                                i {
+                                    font-size: inherit !important;
+                                }
+
+                                a {
+                                    line-height: 18px;
+                                    font-size: $fontMedium;
+                                    white-space: nowrap;
+                                    display: inline-block;
+                                    width: 100%;
+                                    color: $black;
+                                    min-height: 1em;
+                                    padding: 8px 10px 8px 35px;
+                                    vertical-align: top;
+
+                                    @include breakpoint(xs) {
+                                        font-size: $fontMiddle;
+                                    }
+
+                                    &:hover {
+                                        background: #E5E8ED;
+                                        color: $black;
+                                    }
+
+                                    i {
+                                        position: absolute;
+                                        top: 10px;
+                                        left: 10px;
+                                    }
+                                }
+
+                            }
+                        }
+
+                        a {
+                            display: inline-block;
+                            padding: 0 0px 0 10px;
+                            overflow: hidden;
+
+                            &:hover {
+                                color: $primary;
+                            }
+
+                            i {
+                                &:before {
+                                    float: left;
+                                    color: $black;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .bottom {
+                    width: 100%;
+                    padding: 0 0 1rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+
+                    small {
+                        font-size: $fontMedium;
+                        font-weight: $normal;
+                        line-height: 22px;
+                        color: $headcolor;
+                        display: inline-block;
+
+                        @include breakpoint(xs) {
+                            font-size: $fontMiddle;
+                        }
+                    }
+
+                    .high-bid {
+                        h5 {
+                            line-height: 32px;
+                            font-weight: $semibold;
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    .timer {
+                        .time {
+                            padding-left: 4px;
+                            line-height: 32px;
+                            color: $black;
+                            font-weight: $semibold;
+                            font-size: $fontExtraLarge;
+                            padding: 0;
+                            margin-bottom: 0;
+                            display: flex;
+
+                            @include breakpoint(lg) {
+                                font-size: $fontLarge;
+                            }
+
+                            span {
+                                margin: 0 5px;
+
+                                &:first-child {
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                h6 {
+                    line-height: 28px;
+                    font-weight: $semibold;
+                    margin-bottom: 0.5rem;
+                }
+
+                .location {
+                    font-size: $fontMedium;
+                    margin-bottom: 1rem;
+
+                    @include breakpoint(xs) {
+                        font-size: $fontMiddle;
+                    }
+                }
+
+                .projects-text {
+                    font-size: $fontMedium;
+                    margin-bottom: 10px;
+
+                    @include breakpoint(xs) {
+                        font-size: $fontMiddle;
+                    }
+
+                    span {
+                        font-weight: $semibold;
+                    }
+                }
+
+                .msg {
+                    font-size: $fontMedium;
+                    font-weight: $medium;
+                    line-height: 20px;
+                    padding: 7px 12px;
+                    margin-bottom: 8px;
+                    @include border-radius (8px);
+
+                    @include breakpoint(lg) {
+                        font-size: $fontSmall;
+                    }
+
+                    @include breakpoint(xs) {
+                        font-size: $fontMiddle;
+                    }
+
+                    &.success-msg {
+                        background-color: #DBFAE3;
+                        color: #34A853;
+                    }
+                }
+
+                .deposit-text {
+                    font-size: $fontMedium;
+
+                    @include breakpoint(xs) {
+                        font-size: $fontMiddle;
+                    }
+
+                    span {
+                        font-weight: $semibold;
+                    }
+                }
+
+                // .bid-btn {
+                //     position: absolute;
+                //     bottom: 0;
+                // }
+            }
+
+        }
+    }
+}
+
+.liveauction-wrap {
+    clear: both;
+
+    .auction-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -20px;
+
+        @include breakpoint(xs) {
+            margin: 0;
+        }
+
+        li {
+            padding: 0 20px;
+            width: 50%;
+
+            @include breakpoint(xs) {
+                width: 100%;
+                padding: 0 0 20px;
+            }
+
+            &:last-child {
+                @include breakpoint(xs) {
+                    padding-bottom: 0;
+                }
+            }
+
+            &.full {
+                width: 100%;
+            }
+
+            figure {
+                position: relative;
+                margin-bottom: 12px;
+
+                @include breakpoint(xs) {
+                    margin-bottom: 0;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    z-index: 1;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    bottom: 0;
+                    height: 100%;
+                    background: rgb(255, 255, 255);
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 90%);
+                    @include border-radius(1.5rem);
+
+                    @include breakpoint(sm) {
+                        @include border-radius (1rem);
+                    }
+                }
+
+                .slide-fixed {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+
+                .slide-img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    -o-object-fit: cover;
+                    transition: transform 0.2s, opacity 0.3s, -webkit-transform 0.4s;
+                    @include border-radius (1.5rem);
+
+                    @include breakpoint(sm) {
+                        @include border-radius (1rem);
+                    }
+                }
+
+                .top {
+                    position: absolute;
+                    z-index: 2;
+                    top: 0;
+                    width: 100%;
+                    padding: 1.5rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: $white;
+
+                    @include breakpoint(sm) {
+                        padding: 1rem;
+                    }
+
+                    @include breakpoint(xs) {
+                        padding: 0.5rem 1rem;
+                    }
+
+                    .status-info {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        span {
+                            font-weight: $medium;
+                            font-size: $fontMedium;
+                            padding: 4px 12px;
+                            @include border-radius (20px);
+
+                            @include breakpoint(xs) {
+                                font-size: $fontSmall;
+                                padding: 3px 10px;
+                            }
+
+                            &.total-bid {
+                                color: $black;
+                                background-color: rgba($color: #FFF, $alpha: 0.7);
+                            }
+
+                            &.soon {
+                                color: $red;
+                                background-color: #FFE3E3;
+                            }
+
+                            &.active {
+                                color: $white;
+                                background-color: #34A853;
+                            }
+
+                            &.status {
+                                color: $white;
+                                background-color: $red;
+
+                                em {
+                                    width: 6px;
+                                    height: 6px;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    background-color: $white;
+                                    @include border-radius (20px);
+                                }
+                            }
+                        }
+
+                        span+span {
+                            margin-left: 10px;
+                        }
+                    }
+
+                    .like-btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 32px;
+                        height: 32px;
+                        background-color: rgba($color: #FFF, $alpha: 0.7);
+                        @include border-radius (30px);
+                    }
+
+                }
+
+                .bottom {
+                    position: absolute;
+                    z-index: 2;
+                    bottom: 0;
+                    width: 100%;
+                    padding: 1.5rem;
+                    color: $white;
+
+                    @include breakpoint(sm) {
+                        padding: 1rem;
+                    }
+
+                    h6 {
+                        color: $white;
+                        font-weight: $semibold;
+                        line-height: 32px;
+                        margin-bottom: 1rem;
+
+                        @include breakpoint(sm) {
+                            margin-bottom: 0.5rem;
+                            display: none;
+                        }
+                    }
+
+                    small {
+                        font-size: 12px;
+                        font-weight: $normal;
+                        line-height: 22px;
+                        display: inline-block;
+                    }
+
+                    .bid-box {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: 1px solid rgba($color: #FFF, $alpha: 0.34);
+                        padding-bottom: 1rem;
+
+                        @include breakpoint(sm) {
+                            padding-bottom: 0.5rem;
+                        }
+
+                        .high-bid {
+                            h5 {
+                                color: $white;
+                                line-height: 36px;
+                                font-weight: $semibold;
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        .timer {
+                            .time {
+                                background-color: rgba($color: #FFF, $alpha: 0.7);
+                                line-height: 32px;
+                                color: $black;
+                                font-weight: $semibold;
+                                padding: 2px 8px;
+                                margin-bottom: 0;
+                                @include border-radius (8px);
+
+                                &.soon {
+                                    color: $white;
+                                    background-color: rgba($color: #E32926, $alpha: 0.6);
+                                }
+
+                                span {
+                                    display: inline-block;
+                                    margin: 0 5px;
+                                    width: 44px;
+
+                                    &:first-child {
+                                        margin-left: 0;
+                                    }
+
+                                    &:nth-child(2) {
+                                        width: 50px;
+                                    }
+
+                                    &:last-child {
+                                        width: 50px;
+                                        margin-right: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .apk {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 1rem 0 1.5rem;
+                        font-size: $fontMedium;
+
+                        @include breakpoint(sm) {
+                            padding: 0.5rem 0;
+                            font-size: $fontMiddle;
+                        }
+
+                        .apk-text {
+                            span {
+                                padding: 0 8px;
+                            }
+                        }
+
+                        .prp-link {
+                            color: $white;
+                            font-weight: $semibold;
+
+                            i {
+                                margin-left: 4px;
+                            }
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
+}
+
+.discover-wrap {
+    clear: both;
+}
+
+.discover-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+
+    @include breakpoint(xs) {
+        margin: 0;
+    }
+
+    &.my-bid {
+        li {
+            figure {
+                .bottom {
+                    bottom: 24px;
+
+                    .high-bid {
+                        h5 {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    li {
+        padding: 0 15px 40px;
+        width: 33.3%;
+
+        @include breakpoint(lg) {
+            width: 50%;
+        }
+
+        @include breakpoint(xs) {
+            width: 100%;
+            padding: 0 0 20px;
+        }
+
+        &.full {
+            width: 100%;
+        }
+
+        figure {
+            position: relative;
+            margin-bottom: 12px;
+
+            button {
+                padding: 0;
+            }
+
+            a {
+                position: relative;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    z-index: 1;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    bottom: 0;
+                    height: 100%;
+                    background: rgb(255, 255, 255);
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 70%);
+                    @include border-radius(1.5rem);
+
+                    @include breakpoint(sm) {
+                        @include border-radius (1rem);
+                    }
+                }
+            }
+
+            .slide-fixed {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .slide-img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                -o-object-fit: cover;
+                transition: transform 0.2s, opacity 0.3s, -webkit-transform 0.4s;
+                @include border-radius (1.5rem);
+
+                @include breakpoint(xs) {
+                    @include border-radius (1rem);
+                }
+            }
+
+            .msg-status {
+                position: absolute;
+                z-index: 2;
+                bottom: 0;
+                width: 100%;
+
+                .msg {
+                    font-weight: $semibold;
+                    font-size: $fontSmall;
+                    text-align: center;
+                    padding: 4px 0;
+                    backdrop-filter: blur(4px);
+                    @include border-radius (0 0 20px 20px);
+
+                    @include breakpoint(xs) {
+                        @include border-radius (0 0 1rem 1rem);
+                    }
+
+                    &.success-msg {
+                        background-color: rgba($color: #DBFAE3, $alpha: 0.8);
+                        backdrop-filter: blur(4px);
+                        color: #34A853;
+                    }
+
+                    &.danger-msg {
+                        background-color: rgba($color: #FFE3E3, $alpha: 0.8);
+                        color: #E32926;
+                    }
+                }
+            }
+
+            .top {
+                position: absolute;
+                z-index: 2;
+                top: 0;
+                width: 100%;
+                padding: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: $white;
+
+                .status-info {
+                    span {
+                        font-weight: $medium;
+                        font-size: $fontSmall;
+                        padding: 4px 8px;
+                        @include border-radius (20px);
+
+                        @include breakpoint(xs) {
+                            @include border-radius (1rem);
+                        }
+
+                        &.total-bid {
+                            color: $black;
+                            background-color: rgba($color: #FFF, $alpha: 0.7);
+                        }
+
+                        &.danger {
+                            color: $white;
+                            background-color: $red;
+                        }
+
+                        &.status {
+                            color: $white;
+                            background-color: #34A853;
+                        }
+                    }
+
+                    span+span {
+                        margin-left: 10px;
+                    }
+                }
+
+                .like-btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 32px;
+                    height: 32px;
+                    background-color: rgba($color: #FFF, $alpha: 0.7);
+                    @include border-radius (30px);
+
+                    +.like-btn {
+                        margin-left: 8px;
+                    }
+                }
+
+            }
+
+            .bottom {
+                position: absolute;
+                z-index: 2;
+                bottom: 0;
+                width: 100%;
+                padding: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: $white;
+
+                small {
+                    font-size: 12px;
+                    font-weight: $normal;
+                    line-height: 18px;
+                }
+
+                .high-bid {
+                    h6 {
+                        color: $white;
+                        line-height: 26px;
+                        font-weight: $semibold;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .timer {
+                    &.discover {
+                        width: 100%;
+                        text-align: center;
+
+                        .time {
+                            justify-content: center;
+                        }
+                    }
+
+                    .time {
+                        margin-bottom: 0;
+                        display: flex;
+                        background-color: rgba($color: #FFF, $alpha: 0.7);
+                        line-height: 32px;
+                        color: $black;
+                        font-weight: $semibold;
+                        padding: 2px 8px;
+                        @include border-radius (8px);
+
+                        span {
+                            margin: 0 5px;
+                            width: 44px;
+
+                            &:first-child {
+                                margin-left: 0;
+                            }
+
+                            &:nth-child(2) {
+                                width: 48px;
+                            }
+
+                            &:last-child {
+                                width: 50px;
+                                margin-right: 0;
+                            }
+                        }
+
+                        p {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        figcaption {
+            h6 {
+                line-height: 28px;
+                font-weight: $semibold;
+            }
+
+            .location {
+                font-size: $fontMedium;
+                margin-bottom: 8px;
+
+                @include breakpoint(xs) {
+                    font-size: $fontMiddle;
+                }
+
+                .map-icon {
+                    margin-right: 4px;
+                }
+            }
+
+            .deposit-text {
+                font-size: $fontMedium;
+
+                @include breakpoint(xs) {
+                    font-size: $fontMiddle;
+                }
+
+                span {
+                    font-weight: $semibold;
+                }
+            }
+        }
+
+    }
+}
+
+.star-wrap {
+    clear: both;
+    background-image: url(../img/star-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 4rem 0;
+
+    @include breakpoint(xs) {
+        padding: 3rem 0 2rem;
+    }
+
+    h2 {
+        color: $white;
+        line-height: 64px;
+        font-weight: $semibold;
+
+        @include breakpoint(sm) {
+            line-height: 44px;
+        }
+
+        span {
+            display: block;
+
+            em {
+                font-weight: $normal;
+            }
+        }
+    }
+
+    p {
+        color: $white;
+
+        @include breakpoint(md) {
+            margin-bottom: 1rem !important;
+        }
+    }
+
+    .row {
+        position: relative;
+    }
+
+    .create-auction-btn {
+        text-align: right;
+
+        @include breakpoint(xs) {
+            text-align: left;
+        }
+    }
+
+    .star-icon {
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        top: -34px;
+        right: 15px;
+        animation: 2.5s rotate infinite;
+        animation-timing-function: linear;
+
+        @include breakpoint(xs) {
+            animation: none;
+        }
+
+        &:after {
+            content: "";
+            width: 70px;
+            height: 70px;
+            display: block;
+            transform: rotate(45deg);
+        }
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .item {
+        padding-top: 2rem;
+        border-top: 1px solid rgba($color: #FFF, $alpha: 0.2);
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem -15px 0;
+
+        @include breakpoint(xs) {
+            margin: 2rem 0 0 0;
+        }
+
+        .block {
+            width: 50%;
+            padding: 0 15px;
+
+            @include breakpoint(xs) {
+                width: 100%;
+                padding: 0;
+            }
+
+            &:first-child {
+                @include breakpoint(xs) {
+                    padding-bottom: 2rem;
+                }
+            }
+
+            h5 {
+                color: $white;
+                font-weight: $medium;
+            }
+
+            p {
+                font-size: $fontMedium;
+            }
+
+            .link {
+                color: $white;
+            }
+        }
+    }
+
+}
+
+.featured-wrap {
+    .project-list {
+        li {
+            width: 50%;
+            padding: 0 1.25rem;
+
+            @include breakpoint(xs) {
+                width: 100%;
+                padding: 0 0 1rem;
+            }
+        }
+    }
+}
+
+.other-pro-wrap {
+    clear: both;
+    padding-bottom: 5rem;
+
+    @include breakpoint(md) {
+        padding-bottom: 2rem;
+    }
+
+    @include breakpoint(xs) {
+        padding-bottom: 1.5rem;
+    }
+
+    .project-slide,
+    .areas-slide {
+        margin: 0 -20px;
+
+        @include breakpoint(xs) {
+            margin: 0;
+        }
+
+        a {
+            figure {
+                text-align: center;
+                background-color: $sky;
+
+                img {
+                    display: inline-block;
+                    width: auto;
+                    height: 100%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    top: 50%;
+                }
+            }
+
+            figcaption {
+                h6 {
+                    font-weight: $semibold;
+                    font-size: $fontExtraLarge;
+                    line-height: 28px;
+                    margin-bottom: 0;
+
+                    @include breakpoint(xs) {
+                        font-size: $fontLarge;
+                    }
+
+                    span {
+                        display: block;
+                        font-weight: $normal;
+                        font-size: $fontLarge;
+                        color: #5B767F;
+
+                        @include breakpoint(xs) {
+                            font-size: $fontMedium;
+                        }
+                    }
+                }
+            }
+        }
+
+        .slick-slide {
+            padding: 0 20px;
+        }
+
+        .slick-prev,
+        .slick-next {
+            top: inherit;
+            bottom: -110px;
+            width: 70px;
+            height: 70px;
+            border: 1px solid #E9E9E9;
+            @include border-radius (100%);
+
+            @include breakpoint(lg) {
+                bottom: -70px;
+                width: 50px;
+                height: 50px;
+            }
+
+            @include breakpoint(xs) {
+                width: 40px;
+                height: 40px;
+                bottom: -60px;
+            }
+
+            &:hover {
+                background-color: $primary;
+                border-color: $primary;
+
+                &:before,
+                &:after {
+                    color: $white;
+                    filter: brightness(0) invert(1);
+                }
+            }
+
+            &:before {
+                width: 10px;
+                height: 20px;
+                display: inline-block;
+                opacity: 1;
+                color: $black;
+            }
+        }
+
+        .slick-prev {
+            left: inherit;
+            right: 90px;
+
+            &:before {
+                content: "";
+                background: url(../img/next.svg) no-repeat;
+                transform: rotate(180deg);
+            }
+        }
+
+        .slick-next {
+            right: 0;
+
+            &:before {
+                content: "";
+                background: url(../img/next.svg) no-repeat;
+            }
+        }
+    }
+}
+
+
+.live-auction-wrap {
+    clear: both;
+    padding: 2rem 0;
+
+    .bids-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            figure {
+                width: 50%;
+                position: relative;
+                padding: 1.5rem;
+                margin-bottom: 0;
+
+                @include breakpoint(sm) {
+                    padding: 1rem;
+                }
+
+                @include breakpoint(xs) {
+                    width: 100%;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    bottom: 0;
+                    height: 100%;
+                    background: rgb(255, 255, 255);
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 90%);
+                    @include border-radius(1.5rem);
+
+                    @include breakpoint(sm) {
+                        @include border-radius (1rem);
+                    }
+                }
+
+                .slide-fixed {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+
+                .slide-img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    -o-object-fit: cover;
+                    transition: transform 0.2s, opacity 0.3s, -webkit-transform 0.4s;
+                    @include border-radius (1.5rem);
+
+                    @include breakpoint(xs) {
+                        @include border-radius (1rem);
+                    }
+                }
+
+                .top {
+                    width: calc(100% - 3rem);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: $white;
+                    position: absolute;
+                    top: 1.5rem;
+
+                    .status-info {
+                        span {
+                            font-weight: $medium;
+                            font-size: $fontMedium;
+                            padding: 6px 12px;
+                            line-height: 30px;
+                            @include border-radius (20px);
+
+                            @include breakpoint(xs) {
+                                font-size: $fontMiddle;
+                            }
+
+                            &.total-bid {
+                                color: $black;
+                                background-color: $sky;
+                            }
+                        }
+                    }
+
+                    .like-btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 32px;
+                        height: 32px;
+
+                        button {
+                            width: 100%;
+                            padding: 0;
+                        }
+                    }
+                }
+
+                .top-bids {
+                    position: absolute;
+                    top: 4rem;
+                    width: 55%;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    @include breakpoint(sm) {
+                        top: 2rem;
+                    }
+
+                    h6 {
+                        color: $white;
+                        text-align: center;
+                        padding-bottom: 5px;
+                    }
+
+                    .auction-slider {
+                        position: relative;
+
+                        .slick-list {
+                            max-height: 325px;
+                            overflow: hidden;
+
+                            @include breakpoint(sm) {
+                                max-height: 165px;
+                            }
+                        }
+
+                        .slick-prev,
+                        .slick-next {
+                            top: 10px;
+                        }
+
+                        .slick-prev {
+                            right: -30px;
+                            left: inherit;
+                            transform: rotate(90deg);
+                        }
+
+                        .slick-next {
+                            right: -30px;
+                            top: 40px !important;
+                            transform: rotate(90deg);
+                        }
+
+                        li {
+                            justify-content: center;
+                            margin: 0.5rem 0;
+                            padding: 1px 0;
+                            @include border-radius (1rem);
+
+                            @include breakpoint(sm) {
+                                margin: 0;
+                            }
+
+                            .icon {
+                                margin-right: .5rem;
+                            }
+
+                            h2,
+                            h3,
+                            h4,
+                            h5 {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: $white;
+                                margin: 0;
+                                width: 100%;
+                                text-align: center;
+                                position: relative;
+                                overflow: hidden;
+                            }
+
+                            &.active {
+                                border: 2px solid $white;
+
+                                .blur {
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: url(../img/blur.svg) no-repeat;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            figcaption {
+                width: 50%;
+                padding-left: 2.5rem;
+                position: relative;
+
+                @include breakpoint(xs) {
+                    width: 100%;
+                    padding-left: 0;
+                    padding-top: 1rem;
+                }
+
+                h3 {
+                    line-height: 48px;
+                    font-weight: $semibold;
+                    margin-bottom: 1rem;
+                }
+
+                .timer {
+                    margin-bottom: 1rem;
+
+                    small {
+                        font-size: $fontMedium;
+                        font-weight: $normal;
+                        display: block;
+                        color: $headcolor;
+                    }
+
+                    ol {
+                        margin: 0 -0.75rem;
+                        padding: 0;
+                        display: flex;
+
+                        li {
+                            padding: 0 0.75rem;
+                            width: 33.3%;
+
+                            h5 {
+                                background-color: $sky;
+                                width: 100%;
+                                margin-bottom: 0;
+                                text-align: center;
+                                padding: 1rem;
+                                line-height: 36px;
+
+                                span {
+                                    display: block;
+                                    font-size: $fontMedium;
+                                    font-weight: $normal;
+                                    color: $headcolor;
+                                    line-height: normal;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .bottom {
+                    width: 100%;
+                    padding: 0 0 1rem;
+                    margin-bottom: 1rem;
+                    border-bottom: 1px solid $bordercolor;
+
+                    &.last {
+                        border-bottom: none;
+                        margin-bottom: 0;
+                    }
+
+                    .block {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding-bottom: 0.5rem;
+
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+
+                        .text-rgt {
+                            font-weight: $medium;
+
+                            &.green-text {
+                                color: $green;
+                            }
+
+                            &.red-text {
+                                color: $red;
+                            }
+                        }
+
+                        .p-link {
+                            font-weight: $semibold;
+                        }
+                    }
+
+                    small {
+                        font-size: $fontMedium;
+                        font-weight: $normal;
+                        line-height: 22px;
+                        color: #5B767F;
+
+                        @include breakpoint(xs) {
+                            font-size: $fontMiddle;
+                        }
+                    }
+                }
+
+                .msg-status {
+                    width: 100%;
+
+                    .msg {
+                        font-weight: $semibold;
+                        font-size: $fontMedium;
+                        line-height: 22px;
+                        text-align: center;
+                        padding: 8px 0;
+                        margin-bottom: 1rem;
+                        @include border-radius (8px);
+
+                        &.success-msg {
+                            background-color: rgba($color: #DBFAE3, $alpha: 0.8);
+                            backdrop-filter: blur(4px);
+                            color: #34A853;
+                        }
+
+                        &.danger-msg {
+                            background-color: rgba($color: #FFE3E3, $alpha: 0.8);
+                            color: #E32926;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+.bidwon-wrap {
+    clear: both;
+    padding: 10rem 0 4rem;
+    background-image: url(../img/bid-won-bg.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    .bidwon-text {
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+
+        @include breakpoint(md) {
+            width: 70%;
+        }
+
+        @include breakpoint(xs) {
+            width: 100%;
+        }
+
+        h3 {
+            line-height: 56px;
+            font-weight: $semibold;
+            margin-bottom: 2.5rem;
+
+            span {
+                display: block;
+                font-size: $fontExtraLarge;
+                color: $headcolor;
+                line-height: 21px;
+                font-weight: $normal;
+            }
+        }
+
+        ul {
+            li {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid $bordercolor;
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+
+                &:last-child {
+                    border-bottom: none;
+                    padding-bottom: 0;
+                }
+
+                .r-text {
+                    font-weight: $semibold;
+                }
+            }
+        }
+    }
+}
+
+
+
+.wonauction-wrap {
+    clear: both;
+
+    .wonauction-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -20px;
+
+        @include breakpoint(md) {
+            margin: 0;
+        }
+
+        li {
+            width: 50%;
+            padding: 0 20px 20px;
+
+            @include breakpoint(md) {
+                width: 100%;
+                padding: 0 0px 20px;
+            }
+
+            .won-box {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                height: 100%;
+                background-color: rgba($color: #027BFF, $alpha: 0.1);
+                padding: 1rem;
+                @include border-radius (1rem);
+
+                figure {
+                    width: 250px;
+                    margin: 0;
+                    position: relative;
+
+                    @include breakpoint(lg) {
+                        width: 200px;
+                    }
+
+                    @include breakpoint(xs) {
+                        width: 100%;
+                    }
+
+                    .slide-fixed {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        z-index: -1;
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+
+                    .slide-img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        -o-object-fit: cover;
+                        transition: transform 0.2s, opacity 0.3s, -webkit-transform 0.4s;
+                        @include border-radius (1rem);
+                    }
+
+                    .won-tag {
+                        position: absolute;
+                        top: 0;
+                        left: 10px;
+                    }
+
+                    .msg-status {
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+
+                        .msg {
+                            font-weight: $semibold;
+                            font-size: $fontSmall;
+                            text-align: center;
+                            padding: 4px 0;
+                            backdrop-filter: blur(4px);
+                            @include border-radius (0 0 1rem 1rem);
+
+                            &.success-msg {
+                                background-color: rgba($color: #DBFAE3, $alpha: 0.8);
+                                backdrop-filter: blur(4px);
+                                color: #34A853;
+                            }
+
+                            &.danger-msg {
+                                background-color: rgba($color: #FFE3E3, $alpha: 0.8);
+                                color: #E32926;
+                            }
+                        }
+                    }
+
+                }
+
+                figcaption {
+                    width: calc(100% - 250px);
+                    padding-left: 13px;
+
+                    @include breakpoint(lg) {
+                        width: calc(100% - 200px);
+                    }
+
+                    @include breakpoint(sm) {
+                        width: 100%;
+                        padding: 10px 0 0 0;
+                    }
+
+                    .top {
+                        width: 100%;
+                        padding: 0 0 1rem;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        color: $white;
+                        position: relative;
+
+                        .status-info {
+                            span {
+                                display: inline-block;
+                                font-weight: $medium;
+                                font-size: $fontMedium;
+                                padding: 1px 12px;
+                                line-height: 30px;
+                                @include border-radius (20px);
+
+                                @include breakpoint(laptop) {
+                                    font-size: $fontSmall;
+                                    padding: 1px 8px;
+                                }
+
+                                @include breakpoint(xs) {
+                                    font-size: $fontMiddle;
+                                }
+
+                                &.total-bid {
+                                    color: $black;
+                                    background-color: $sky;
+                                }
+
+                                &.status {
+                                    color: $white;
+                                    background-color: #34A853;
+                                }
+
+                                &.active {
+                                    color: $white;
+                                    background-color: #34A853;
+                                }
+
+                                &.danger {
+                                    color: $white;
+                                    background-color: $red;
+                                }
+
+                                &.default {
+                                    color: $white;
+                                    background-color: #676767;
+                                }
+
+                                &.info {
+                                    color: $white;
+                                    background-color: $blue;
+                                }
+                            }
+
+                            span+span {
+                                margin-left: 10px;
+                            }
+                        }
+
+                        .like-btn {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 32px;
+                            height: 32px;
+                            background-color: $sky;
+                            @include border-radius (30px);
+                        }
+                    }
+
+                    h6 {
+                        line-height: 32px;
+                        margin-bottom: 10px;
+
+                        span {
+                            display: block;
+                            padding-top: 5px;
+                            font-size: $fontLarge;
+                            font-weight: $normal;
+                            line-height: 24px;
+                            color: $black;
+                        }
+                    }
+
+                    .location {
+                        font-size: $fontMedium;
+                        margin-bottom: .5rem;
+
+                        @include breakpoint(xs) {
+                            font-size: $fontMiddle;
+                        }
+
+                        .map-icon {
+                            margin-right: 4px;
+                        }
+                    }
+
+                    .bottom {
+                        width: 100%;
+                        padding: 0;
+
+                        small {
+                            font-size: $fontMedium;
+                            font-weight: $normal;
+                            line-height: 22px;
+                            color: $headcolor;
+                            display: inline-block;
+
+                            @include breakpoint(xs) {
+                                font-size: $fontMiddle;
+                            }
+                        }
+
+                        .high-bid {
+                            h5 {
+                                line-height: 32px;
+                                font-weight: $semibold;
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.full {
+                width: 100%;
+
+                figcaption {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    @include breakpoint(xs) {
+                        flex-wrap: wrap;
+                    }
+
+                    h6 {
+                        margin-bottom: 0;
+
+                        @include breakpoint(xs) {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+.hero-banner {
+    clear: both;
+    width: 100%;
+    padding: 8rem 0 5rem;
+    margin-bottom: 3rem;
+    background: #051653;
+    background: linear-gradient(90deg, rgba(5, 22, 83, 1) 1%, rgba(7, 14, 39, 1) 53%, rgba(9, 35, 127, 1) 100%);
+
+    @include breakpoint(xs) {
+        margin-bottom: 2rem;
+        padding: 6rem 0 2rem;
+    }
+
+    .slick-arrow {
+        @include breakpoint(xs) {
+            display: none !important;
+        }
+    }
+
+    .item-block {
+        display: flex;
+        padding-bottom: 5rem;
+
+        @include breakpoint(md) {
+            flex-direction: column-reverse;
+            padding-bottom: 3rem;
+        }
+
+        .block {
+            width: calc(100% - 600px);
+
+            @include breakpoint(md) {
+                width: 100%;
+            }
+
+            &:last-child {
+                width: 600px;
+
+                @include breakpoint(md) {
+                    width: 100%;
+                }
+            }
+
+            .hero-text {
+                padding-top: 100px;
+
+                @include breakpoint(md) {
+                    padding-top: 50px;
+                }
+
+                h2 {
+                    color: $white;
+                    font-weight: $semibold;
+                    padding-bottom: 5px;
+
+                    span {
+                        font-weight: $normal;
+                        font-style: italic;
+                    }
+                }
+
+                p {
+                    color: $white;
+                }
+            }
+
+            figure {
+                position: relative;
+                margin: 0;
+                width: 515px;
+                height: 530px;
+
+                @include breakpoint(md) {
+                    width: 100%;
+                    height: 340px;
+                    padding: .8rem;
+                }
+
+                .stripe {
+                    color: $white;
+                    display: flex;
+                    align-items: center;
+                    position: absolute;
+                    z-index: 2;
+                    padding: .9rem 1rem;
+                    background-color: rgba($color: #72727266, $alpha: 0.4);
+                    backdrop-filter: blur(10px);
+                    @include border-radius (30px);
+                    
+                    .icon {
+                        margin-right: 6px;
+                    }
+
+                    &.one {
+                        left: -54px;
+                        bottom: 165px;
+
+                        @include breakpoint(md) {
+                            left: 0;
+                        }
+
+                        img {
+                            @include breakpoint(md) {
+                                width: 75%;
+                            }
+                        }
+                    }
+
+                    &.two {
+                        left: 50px;
+                        bottom: 27px;
+
+                        img {
+                            @include breakpoint(md) {
+                                width: 75%;
+                            }
+                        }
+                    }
+
+                    &.three {
+                        right: -54px;
+                        bottom: 280px;
+
+                        @include breakpoint(md) {
+                            right: 0;
+                            text-align: right;
+                        }
+
+                        img {
+                            @include breakpoint(md) {
+                                width: 75%;
+                            }
+                        }
+                    }
+                }
+
+                .pic {
+                    position: relative;
+                    z-index: 1;
+                    height: 100%;
+                    box-shadow: 0px 64px 214px 0px #CA10B880;
+                    border-radius: 0px 0px 0px 250px;
+
+                    @include breakpoint(md) {
+                        width: 100%;
+                        border-radius: 0px 0px 0px 200px;
+                    }
+                }
+
+                .circle {
+                    position: absolute;
+                    right: -80px;
+                    bottom: -40px;
+                    width: 344px;
+                    height: 344px;
+                    background: url(../img/circle.png) no-repeat;
+
+                    @include breakpoint(md) {
+                        width: 214px;
+                        height: 214px;
+                        right: inherit;
+                        left: .8rem;
+                        bottom: 0px;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .live-auction {
+
+        .main-heading {
+            h3 {
+                color: $white;
+            }
+        }
+
+        .slick-prev,
+        .slick-next {
+            width: 70px;
+            height: 70px;
+            border: 1px solid #E9E9E9;
+            @include border-radius (100%);
+
+            @include breakpoint(lg) {
+                width: 50px;
+                height: 50px;
+            }
+
+            @include breakpoint(xs) {
+                width: 40px;
+                height: 40px;
+            }
+
+            &:hover {
+                background-color: $primary;
+                border-color: $primary;
+
+                &:before,
+                &:after {
+                    color: $white;
+                    filter: brightness(0) invert(1);
+                }
+            }
+
+            &:before {
+                width: 10px;
+                height: 20px;
+                display: inline-block;
+                opacity: 1;
+                color: $black;
+            }
+        }
+
+        .slick-prev {
+            left: -90px;
+            
+
+            &:before {
+                content: "";
+                background: url(../img/next-w.svg) no-repeat;
+                transform: rotate(180deg);
+            }
+        }
+
+        .slick-next {
+            right: -90px;
+
+            &:before {
+                content: "";
+                background: url(../img/next-w.svg) no-repeat;
+            }
+        }
+
+        li {
+            display: flex !important;
+            flex-wrap: wrap;
+            align-items: center;
+
+            figure {
+                width: 45%;
+                position: relative;
+                margin: 0;
+
+                @include breakpoint(xs) {
+                    width: 100%;
+                }
+
+                .slide-fixed {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+
+                .slide-img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    -o-object-fit: cover;
+                    transition:
+                        transform 0.2s,
+                        opacity 0.3s,
+                        -webkit-transform 0.4s;
+                    @include border-radius(1.5rem);
+
+                    @include breakpoint(xs) {
+                        @include border-radius(1rem);
+                    }
+                }
+            }
+
+            figcaption {
+                width: 55%;
+                padding-left: 2rem;
+
+                @include breakpoint(xs) {
+                    width: 100%;
+                    padding: 1rem 0 0 0;
+                }
+
+                .status-info {
+                    display: flex;
+                    align-items: center;
+                    padding-bottom: 1rem;
+
+                    span {
+                        font-weight: $medium;
+                        font-size: $fontMedium;
+                        padding: 4px 12px;
+                        @include border-radius (20px);
+
+                        @include breakpoint(xs) {
+                            font-size: $fontSmall;
+                            padding: 3px 10px;
+                        }
+
+                        &.total-bid {
+                            color: $black;
+                            background-color: #F5F9FB;
+                        }
+
+                        &.soon {
+                            color: $red;
+                            background-color: #FFE3E3;
+                        }
+
+                        &.active {
+                            color: $white;
+                            background-color: #34A853;
+                        }
+
+                        &.status {
+                            color: $white;
+                            background-color: $red;
+
+                            em {
+                                width: 6px;
+                                height: 6px;
+                                display: inline-block;
+                                vertical-align: middle;
+                                background-color: $white;
+                                @include border-radius (20px);
+                            }
+                        }
+                    }
+
+                    span+span {
+                        margin-left: 10px;
+                    }
+                }
+
+                h5 {
+                    color: $white;
+                    margin: 0;
+                    padding-bottom: 1.5rem;
+                }
+
+                .bid-end {
+                    small {
+                        color: $white;
+                        font-size: $fontMedium;
+                    }
+
+                    ul {
+                        display: flex;
+
+                        li {
+                            justify-content: center;
+                            text-align: center;
+                            width: 30%;
+                            height: 90px;
+                            margin: 0 5% 0 0;
+                            background-color: rgba($color: #FFF, $alpha: 0.2);
+                            @include border-radius (1rem);
+
+                            @include breakpoint(xs) {
+                                height: 60px;
+                            }
+
+                            &:last-child {
+                                margin-right: 0;
+                            }
+
+                            h5 {
+                                padding: 0;
+
+                                span {
+                                    display: block;
+                                    font-size: $fontMedium;
+                                    font-weight: $normal;
+                                    padding-top: 10px;
+
+                                    @include breakpoint(xs) {
+                                        font-size: $fontSmall;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .bid-box {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-top: 1px solid rgba($color: #FFF, $alpha: 0.2);
+                    padding-top: 1.5rem;
+
+                    @include breakpoint(sm) {
+                        padding-top: 1rem;
+                    }
+
+                    .high-bid {
+                        small {
+                            color: $white;
+                            font-size: $fontMedium;
+                        }
+
+                        h5 {
+                            color: $white;
+                            line-height: 36px;
+                            font-weight: $semibold;
+                            margin-bottom: 0;
+                            padding: 0;
+                        }
+                    }
+                }
+
+                .apk {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1.5rem 0;
+                    font-size: $fontMedium;
+
+                    @include breakpoint(sm) {
+                        padding: 0.5rem 0;
+                        font-size: $fontMiddle;
+                    }
+
+                    .apk-text {
+                        color: $white;
+                        font-size: $fontMedium;
+
+                        span {
+                            padding: 0 8px;
+                        }
+                    }
+
+                    .prp-link {
+                        color: $white;
+                        font-size: $fontMedium;
+                        font-weight: $medium;
+
+                        i {
+                            margin-left: 4px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+.insight-wrap {
+    clear: both;
+    padding-bottom: 5rem;
+
+    @include breakpoint(md) {
+        padding-bottom: 2rem;
+    }
+
+    @include breakpoint(xs) {
+        padding-bottom: 1.5rem;
+    }
+
+    figure {
+        margin-bottom: 0;
+
+        @include breakpoint(md) {
+            margin-bottom: 1rem;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    h3 {
+        font-weight: $semibold;
+    }
+
+    p {
+        color: $headcolor;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+
+        @include breakpoint(xs) {
+            margin: 0;
+        }
+
+        li {
+            width: 50%;
+            padding: 0 15px 30px;
+
+            .icon {
+                margin-bottom: 10px;
+            }
+
+            h4 {
+                sup {
+                    color: $primary;
+                }
+            }
+
+            p {
+                color: $headcolor;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+}

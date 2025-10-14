@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="44" viewBox="0 0 15 44">
+  <g id="Group_22635" data-name="Group 22635" transform="translate(-2361.5 172.5)">
+    <g id="Checkbox" transform="translate(2357 -177.818)">
+      <rect id="Rectangle_20814" data-name="Rectangle 20814" width="14" height="14" rx="7" transform="translate(5 5.818)" fill="#fff" stroke="#e9e9e9" stroke-width="1"/>
+      <path id="Path_79114" data-name="Path 79114" d="M9.707,12.111a1,1,0,0,0-1.414,1.414l2,2a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L11,13.4Z" fill="#fff" fill-rule="evenodd"/>
+    </g>
+    <g id="Checkbox-2" data-name="Checkbox" transform="translate(2357 -148.818)">
+      <rect id="Rectangle_20814-2" data-name="Rectangle 20814" width="14" height="14" rx="7" transform="translate(5 5.818)" fill="#ca10b8" stroke="#ca10b8" stroke-width="1"/>
+      <path id="Path_79114-2" data-name="Path 79114" d="M9.707,12.111a1,1,0,0,0-1.414,1.414l2,2a1,1,0,0,0,1.414,0l4-4a1,1,0,1,0-1.414-1.414L11,13.4Z" fill="#fff" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

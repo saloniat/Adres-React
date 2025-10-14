@@ -1,0 +1,114 @@
+.footer {
+    clear: both;
+    background: $secondary;
+    padding: 3.5rem 0;
+    color: $white;
+    font-size: $fontMedium;
+    font-weight: $normal;
+
+    @include breakpoint(sm) {
+        padding: 2rem 0;
+    }
+
+    .social-links {
+        @include breakpoint(xs) {
+            padding-bottom: 1rem;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            color: $white;
+            font-size: $fontMedium;
+            border: 1px solid $white;
+            @include border-radius(50%);
+
+            @include breakpoint(xs) {
+                font-size: $fontMiddle;
+            }
+
+            &:hover {
+                color: #999;
+            }
+        }
+    }
+
+    .btn-link {
+        line-height: 2em;
+        display: block;
+        margin-bottom: 10px;
+        padding: 0;
+        text-align: left;
+        color: $white;
+        font-size: $fontMedium;
+        font-weight: $normal;
+        text-transform: capitalize;
+        transition: 0.3s;
+
+        @include breakpoint(xs) {
+            font-size: $fontMiddle;
+        }
+
+        &:hover {
+            color: #999;
+            box-shadow: none;
+        }
+    }
+
+    .app-link {
+        display: inline-block;
+        padding: 8px 24px;
+        background-color: $white;
+        @include border-radius(10px);
+    }
+
+    .copyright {
+        border-top: 1px solid #414141;
+        text-align: center;
+        padding-top: 24px;
+        margin-top: 40px;
+        color: $white;
+        line-height: 150%;
+    }
+
+    .app-btns {
+        text-align: right;
+    }
+
+}
+
+.footer-small {
+    background: $secondary;
+    padding: 1.4rem 0;
+    color: $white;
+    font-size: $fontMedium;
+    font-weight: $normal;
+
+    @include breakpoint(xs) {
+        font-size: $fontMiddle;
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+
+        a {
+            color: $white;
+            font-size: $fontMedium;
+            margin-right: 2rem;
+
+            @include breakpoint(xs) {
+                font-size: $fontMiddle;
+            }
+        }
+    }
+
+    .copyright {
+        text-align: right;
+        color: $white;
+        line-height: 150%;
+    }
+}

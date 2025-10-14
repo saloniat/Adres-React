@@ -1,0 +1,195 @@
+.profile-section {
+    clear: both;
+
+    .profile-wrap {
+
+        .profile-pic {
+            position: relative;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+
+            figure {
+                position: relative;
+                width: 138px;
+                height: 138px;
+                margin: 0 auto 1rem;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: cover;
+                    @include border-radius (100%);
+                }
+
+                .profile-uplaod {
+                    position: absolute;
+                    bottom: 5px;
+                    right: 0;
+                    width: 28px;
+                    height: 28px;
+                    overflow: hidden;
+                    display: inline-block;
+
+                    .guZdik {
+                        border: 2px solid $white;
+                        color: $white;
+                        background-color: $primary;
+                        width: 28px;
+                        height: 28px;
+                        min-width: inherit;
+                        padding: 0;
+                        max-width: inherit;
+                        line-height: 24px;
+                        font-size: 18px;
+                        @include border-radius (100%);
+                        position: relative;
+
+                        &:before {
+                            content: "+";
+                            width: 100%;
+                            height: 100%;
+                            line-height: 12px;
+                            color: $white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        svg {
+                            display: none;
+                        }
+                    }
+
+                    .jWkLDY {
+                        display: none !important;
+                    }
+
+                    input[type=file] {
+                        font-size: 100px;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        opacity: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            .profile-name {
+                margin-bottom: 1.5rem;
+
+                h5 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: $semibold;
+                    margin-bottom: 0;
+
+                    img {
+                        margin-left: 8px;
+                    }
+                }
+            }
+
+        }
+
+        .verified-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 1rem;
+            border: 1px solid $bordercolor;
+            margin-bottom: 1rem;
+            @include border-radius (8px);
+
+            .alert {
+                margin-bottom: 0;
+                width: calc(100% - 162px);
+            }
+
+            .verify-btn {
+                width: 150px;
+                font-size: $fontSmall;
+                line-height: 18px;
+                text-align: center;
+                font-weight: $semibold;
+                padding: 9px 0;
+                background-color: $sky;
+                @include border-radius (8px);
+
+                &:hover {
+                    color: $white;
+                    background-color: $blue;
+                }
+            }
+
+        }
+
+        .profile-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0 -1rem;
+
+            li {
+                width: 50%;
+                padding: 1rem;
+
+                a {
+                    background-color: $sky;
+                    display: block;
+                    padding: 10px;
+                    text-align: center;
+                    font-weight: $medium;
+                    line-height: 41px;
+
+                    img {
+                        margin-right: 4px;
+                    }
+                }
+            }
+        }
+
+        .profile-links {
+            margin-top: 2.5rem;
+            clear: both;
+
+            li {
+                margin-bottom: 1.5rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+
+                    a {
+                        &:before {
+                            content: none;
+                        }
+                    }
+                }
+
+                a {
+                    position: relative;
+                    width: 100%;
+                    display: block;
+                    font-weight: $medium;
+                    line-height: 24px;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 8px;
+                        height: 15px;
+                        background: url(../img/arrow-right.svg) no-repeat scroll 0 0;
+                    }
+                }
+            }
+        }
+    }
+}

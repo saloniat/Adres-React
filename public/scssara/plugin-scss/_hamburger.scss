@@ -1,0 +1,207 @@
+body.overflow {
+    overflow: hidden;
+  }
+  
+  /*  BURGER
+  ========================================== */
+  .burger {
+    width: 35px;
+    height: 35px;
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    z-index: 9999;
+    display: none;
+    @include breakpoint(sm) {
+      display: inline;
+      top: 7px;
+      right: 10px;
+    }
+  }
+  .burger span {
+    position: relative;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: -1.5px;
+  }
+  .burger span, .burger span::before, .burger span::after {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #FFF;
+    outline: 1px solid transparent;
+    -webkit-transition-property: background-color, -webkit-transform;
+    -moz-transition-property: background-color, -moz-transform;
+    -o-transition-property: background-color, -o-transform;
+    transition-property: background-color, transform;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+  .burger span::before, .burger span::after {
+    position: absolute;
+    content: "";
+  }
+  .burger span::before {
+    top: -9px;
+  }
+  .burger span::after {
+    top: 9px;
+  }
+  .burger.clicked span {
+    background-color: transparent;
+  }
+  .burger.clicked span::before {
+    -webkit-transform: translateY(9px) rotate(45deg);
+    -moz-transform: translateY(9px) rotate(45deg);
+    -ms-transform: translateY(9px) rotate(45deg);
+    -o-transform: translateY(9px) rotate(45deg);
+    transform: translateY(9px) rotate(45deg);
+  }
+  .burger.clicked span::after {
+    -webkit-transform: translateY(-9px) rotate(-45deg);
+    -moz-transform: translateY(-9px) rotate(-45deg);
+    -ms-transform: translateY(-9px) rotate(-45deg);
+    -o-transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-9px) rotate(-45deg);
+  }
+  .burger.clicked span:before, .burger.clicked span:after {
+    background-color: #ffffff;
+  }
+  .burger:hover {
+    cursor: pointer;
+  }
+  
+  /*  .sidenav
+  ========================================== */
+  .sidenav {
+    background-color: #2a2a2a;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    height: 100%;
+    max-width: 350px;
+    width: 100%;
+    padding: 100px 20px 20px 20px;
+    overflow-y: auto;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    -moz-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    -o-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+    #leftside-navigation {
+      ul {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display:inline-block;
+        li {
+          display: block;
+          width: 100%;
+          list-style-type: none;
+          border-bottom: 1px solid rgba(255,255,255,.05);
+          &.open > a > i {
+            transform: rotate(90deg);
+            &:not(:hover) {
+              color:$primary;  
+            }
+          }
+          
+          a {
+            position: relative;
+            width: 100%;
+            display: block;
+            color: #aeb2b7;
+            text-decoration: none;
+            width: 100%;
+            padding: 10px 30px 10px 0;
+            box-sizing: border-box;
+            font-size: 14px;
+            line-height:22px;
+            outline: 0;
+            &:hover {
+              color: $primary;
+            }
+            span {
+              display: inline-block;
+            }
+            i {
+              top: 6px;
+              right:0;
+              width: 30px;
+              height:30px;
+              line-height: 30px;
+              text-align: center;
+              display:block;
+              position:absolute;
+              touch-action: manipulation;
+              &:hover {
+                background-color: $primary;
+                color: #000;
+              }
+              .fa-angle-left, .fa-angle-right {
+                padding-top: 3px;
+              }
+            }
+          }
+        }
+      }
+      ul ul {
+        display: none;
+        // background-color: rgba(0,0,0,0.2);
+        li {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  .sidenav.show {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+ 
+  @media (min-width: 667px) {
+    .sidenav {
+      padding: 120px 20px 20px 20px;
+    }
+  }
+  
+  /*  OVERLAY
+  ========================================== */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: $primary;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .overlay.show {
+    opacity: 0.8;
+    visibility: visible;
+  }
