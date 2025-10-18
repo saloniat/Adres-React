@@ -42,7 +42,7 @@
         "react-drag-drop-files": "2.3.10",
         "react-helmet": "^6.1.0",
         "react-hook-form": "^7.53.2",
-        "react-i18next": "^15.1.2",
+        "react-i18next": "^15.7.4",
         "react-infinite-scroll-component": "^6.1.0",
         "react-phone-input-2": "^2.15.1",
         "react-phone-number-input": "^3.4.9",
